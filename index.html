@@ -3,178 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Okorie Agency - Life Insurance & Financial Services</title>
+    <title>Okem Okorie - Under Construction</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #f39c12;
+            --light-gray: #ecf0f1;
+            --dark-gray: #7f8c8d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .construction-container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .construction-icon {
+            font-size: 80px;
+            color: var(--accent-color);
+            margin: 30px 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .contact-item i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.4);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--light-gray);
+            border-radius: 3px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), #e67e22);
+            border-radius: 3px;
+            width: 0%;
+            animation: progress 3s ease-in-out infinite;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 75%; }
+            100% { width: 0%; }
+        }
+
+        .background-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            font-size: 60px;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 20%;
+            font-size: 80px;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            font-size: 70px;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .construction-icon {
+                font-size: 60px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .construction-container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="top-bar">
-                <div class="contact-info">
-                    <div class="contact-info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>Phone: (469) 473-9265</span>
-                    </div>
-                </div>
-                <div class="contact-info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email: contact@okemokorie.com</span>
-                </div>
-            </div>
+    <div class="background-shapes">
+        <div class="shape">
+            <i class="fas fa-cogs"></i>
         </div>
-        <div class="logo-container">
-            <div class="container">
-                <img src="assets/logo.png" alt="The Okorie Agency Logo" class="logo">
-                <h1>The Okorie Agency</h1>
-                <p>Securing Your Financial Future with Expert Guidance</p>
-            </div>
+        <div class="shape">
+            <i class="fas fa-hammer"></i>
         </div>
-        <nav>
-            <div class="container">
-                <div class="nav-container">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="about.html" class="nav-link">About Us</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </div>
-                <div class="mobile-nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+        <div class="shape">
+            <i class="fas fa-wrench"></i>
+        </div>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Financial Protection For Your Family's Future</h1>
-            <p>We provide expert financial guidance and customized life insurance solutions to protect what matters most. Our team of dedicated financial professionals is committed to helping you build a secure financial foundation for generations to come.</p>
-            <a href="contact.html#bookingForm" class="btn">Schedule a Consultation</a>
+    <div class="construction-container">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
+        
+        <h1>Okem Okorie</h1>
+        <p class="subtitle">Securing Your Financial Future with Expert Guidance</p>
+        
+        <div class="construction-icon">
+            <i class="fas fa-hard-hat"></i>
+        </div>
+        
+        <h2 style="color: var(--accent-color); margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">Website Under Construction</h2>
+        
+        <p class="description">
+            We're working hard to bring you an amazing new website experience! Our team is currently updating our platform to better serve you with comprehensive life insurance solutions and financial planning services. We'll be back online soon with enhanced features and improved user experience.
+        </p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <p style="color: var(--dark-gray); margin-bottom: 30px; font-style: italic;">
+            Expected launch: Coming Soon
+        </p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>(469) 473-9265</span>
             </div>
-            <div class="services-container">
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/life.png');"></div>
-                    <div class="service-content">
-                        <h3>Life Insurance</h3>
-                        <p>Comprehensive life insurance solutions designed to provide financial security and peace of mind for you and your loved ones.</p>
-                        <br>
-                        <br>
-                        <a href="services.html" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/iul.png');"></div>
-                    <div class="service-content">
-                        <h3>Indexed Universal Life Insurance</h3>
-                        <p>Specialized IUL policies that offer death benefits while building cash value tied to market index performance with downside protection.</p>
-                        <br>
-                        <a href="services.html" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/planning.png');"></div>
-                    <div class="service-content">
-                        <h3>Financial Planning</h3>
-                        <p>Personalized financial strategies that align with your goals, ensuring protection against unforeseen circumstances while building wealth.</p>
-                        <br>
-                        <a href="services.html" class="btn">Learn More</a>
-                    </div>
-                </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>contact@okemokorie.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Dallas, TX</span>
             </div>
         </div>
-    </section>
-
-    <!-- About Section Preview -->
-    <section class="section" style="background-color: var(--light-gray);">
-        <div class="container">
-            <div class="section-title">
-                <h2>About The Okorie Agency</h2>
-            </div>
-            <div class="about-content-wrapper" style="max-width: 900px; margin: 0 auto; padding: 40px; background-color: white; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; overflow: hidden;">
-                <!-- Skyscraper graphic overlay - subtle and non-intrusive -->
-                <div style="position: absolute; bottom: 0; right: 0; width: 180px; height: 180px; opacity: 0.07; background-image: url('https://cdn-icons-png.flaticon.com/512/2942/2942076.png'); background-size: contain; background-repeat: no-repeat; background-position: bottom right; z-index: 1;"></div>
-                
-                <div style="position: relative; z-index: 2;">
-                    <div class="about-header" style="margin-bottom: 30px; position: relative; padding-bottom: 15px;">
-                        <h3 style="color: var(--primary-color); font-size: 28px; margin-bottom: 5px;">Our Mission</h3>
-                        <div style="width: 60px; height: 4px; background-color: var(--accent-color); position: relative;"></div>
-                    </div>
-                    <p style="font-size: 18px; line-height: 1.7; margin-bottom: 20px;">The Okorie Agency was founded by Okem Okorie with a mission to provide exceptional financial services and insurance solutions to individuals and families. We believe that everyone deserves access to quality financial protection that secures their future and builds generational wealth.</p>
-                    <p style="font-size: 18px; line-height: 1.7; margin-bottom: 30px;">Our team of financial experts aims to deliver personalized guidance that caters to your unique financial situation and goals. We bring financial expertise directly to you, helping you navigate complex insurance options with confidence, clarity, and peace of mind.</p>
-                    <div style="text-align: center; margin-top: 25px;">
-                        <a href="about.html" class="btn" style="padding: 14px 32px; font-weight: 600; letter-spacing: 0.5px;">Learn More About Us</a>
-                    </div>
-                </div>
-                
-                <!-- Left side skyscraper icon - small and subtle -->
-                <div style="position: absolute; top: 25px; left: 25px; width: 40px; height: 40px; opacity: 0.1; background-image: url('https://cdn-icons-png.flaticon.com/512/2161/2161266.png'); background-size: contain; background-repeat: no-repeat; z-index: 1;"></div>
-            </div>
+        
+        <p style="color: var(--secondary-color); margin-top: 30px; font-size: 1rem;">
+            In the meantime, feel free to contact us directly for any insurance or financial planning needs.
+        </p>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61577669551249" class="social-link" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="http://linkedin.com/in/okem-okorie-466b08302" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
         </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="section" style="background-color: var(--primary-color); color: var(--accent-color);">
-        <div class="container" style="text-align: center;">
-            <h2 style="margin-bottom: 20px;">Ready to Secure Your Financial Future?</h2>
-            <p style="margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">Contact us today to schedule a consultation or learn more about our services. We're here to provide the financial guidance you need to protect what matters most.</p>
-            <a href="contact.html" class="btn" style="background-color: var(--accent-color); color: var(--primary-color);">Contact Us Today</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h4>The Okorie Agency</h4>
-                    <p>Providing expert financial guidance and life insurance solutions that protect your family's future and build lasting wealth.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Continued</h4>
-                    <ul class="footer-links">
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-phone"></i> (469) 473-9265</li>
-                        <li><i class="fas fa-envelope"></i> contact@okemokorie.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Dallas, TX</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 The Okorie Agency. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-    <script src="js/placeholder-images.js"></script>
+    </div>
 </body>
-</html>
+</html> 
